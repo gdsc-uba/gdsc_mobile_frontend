@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gdsc_app/views/auth/signup.dart';
 
 import '../../utils/constants.dart';
 import '../../widgets/auth_buttons.dart';
@@ -54,7 +55,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       AuthButtons(
                         size: size,
                         buttonTitle: 'Sign Up',
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, SignUpScreen.signUpScreenId);
+                        },
                       ),
                     ],
                   ),
