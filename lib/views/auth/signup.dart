@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../utils/constants.dart';
 import '../../widgets/auth_buttons.dart';
 import '../../widgets/auth_formfields.dart';
+import '../../widgets/bottom_nav.dart';
 
 class SignUpScreen extends StatefulWidget {
   static const signUpScreenId = "/sign_up_screen";
@@ -52,7 +53,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       AuthButtons(
                         size: size,
                         buttonTitle: 'Sign Up',
-                        onPressed: () {},
+                        onPressed: () {
+                           Navigator.pushReplacementNamed(
+                              context, BottomNav.bottomNavId);
+                        },
                       ),
                       const SizedBox(height: 25.0),
                       const Text("Already have an account?"),

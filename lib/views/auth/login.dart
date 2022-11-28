@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc_app/views/auth/signup.dart';
+import 'package:gdsc_app/widgets/bottom_nav.dart';
 
 import '../../utils/constants.dart';
 import '../../widgets/auth_buttons.dart';
@@ -47,7 +48,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       AuthButtons(
                         size: size,
                         buttonTitle: 'Login',
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(
+                              context, BottomNav.bottomNavId);
+                        },
                       ),
                       const SizedBox(height: 25.0),
                       const Text("Don't have an account?"),
