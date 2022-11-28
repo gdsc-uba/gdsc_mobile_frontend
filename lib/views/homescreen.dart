@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:gdsc_app/utils/constants.dart';
+import 'package:gdsc_app/view_model/projects_view_model.dart';
 
 class Homescreen extends StatefulWidget {
   static const homeScreenId = "/homescreen";
@@ -22,6 +23,7 @@ class _HomescreenState extends State<Homescreen> {
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: size.height * 0.1,
@@ -67,13 +69,13 @@ class _HomescreenState extends State<Homescreen> {
                                   // height: 90.0,
                                   // width: 90.0,
                                   margin: const EdgeInsets.only(
-                                      left: 15.0,
+                                      left: 12.0,
                                       top: 15.0,
-                                      right: 25.0,
-                                      bottom: 15.0),
+                                      right: 35.0,
+                                      bottom: 12.0),
                                   decoration: BoxDecoration(
                                     color: kAltHomeUserProfileCard,
-                                    borderRadius: BorderRadius.circular(30.0),
+                                    borderRadius: BorderRadius.circular(20.0),
                                   ),
                                 ),
                               ),
@@ -131,6 +133,59 @@ class _HomescreenState extends State<Homescreen> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              const SizedBox(height: 30.0),
+              AutoSizeText(
+                "Featured Projects",
+                style: kH1TextStyle,
+                maxLines: 1,
+              ),
+              const SizedBox(height: 30.0),
+              SizedBox(
+                height: 330.0,
+                child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  primary: true,
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Stack(
+                      children: [
+                        Container(
+                          height: 340.0,
+                          width: 275.0,
+                          decoration: BoxDecoration(
+                            color: kAltHomeUserProfileCard,
+                            borderRadius: BorderRadius.circular(30.0),
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 34.0,
+                          right: 12.0,
+                          left: 15.0,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                projectsList[index].projectTitle,
+                                style: kH2TextStyle,
+                              ),
+                              Text(
+                                projectsList[index].projectDescription,
+                                style: kH4TextStyle,
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return const SizedBox(width: 20.0);
+                  },
+                  itemCount: projectsList.length,
                 ),
               ),
             ],
