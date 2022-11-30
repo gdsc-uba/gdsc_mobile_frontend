@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:gdsc_app/utils/constants.dart';
 import 'package:gdsc_app/view_model/projects_view_model.dart';
+import 'package:gdsc_app/views/profile_screen.dart';
 
 class Homescreen extends StatefulWidget {
   static const homeScreenId = "/homescreen";
@@ -97,7 +98,10 @@ class _HomescreenState extends State<Homescreen> {
                                     ),
                                     const SizedBox(height: 10.0),
                                     ElevatedButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pushNamed(context,
+                                            ProfileScreen.profileScreenId);
+                                      },
                                       style: ElevatedButton.styleFrom(
                                         fixedSize: Size(size.width, 60.0),
                                         shape: const RoundedRectangleBorder(

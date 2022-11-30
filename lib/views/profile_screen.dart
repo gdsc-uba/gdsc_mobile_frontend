@@ -13,30 +13,34 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Container(
-            height: size.height * 0.4,
-            width: size.width,
-            color: kLightBlue,
-            child: Center(
-              child: Column(
-                children: [
-                  Container(
-                    height: 160.0,
-                    width: 160.0,
-                    decoration: BoxDecoration(
-                      color: kProfileCardBlue,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
+    return Scaffold(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                height: size.height * 0.4,
+                width: size.width,
+                color: kLightBlue,
+                child: Center(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 160.0,
+                        width: 160.0,
+                        decoration: BoxDecoration(
+                          color: kProfileCardBlue,
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                      ),
+                      Text("Person", style: kH2TextStyle),
+                    ],
                   ),
-                  Text("Person", style: kH2TextStyle),
-                ],
+                ),
               ),
-            ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
