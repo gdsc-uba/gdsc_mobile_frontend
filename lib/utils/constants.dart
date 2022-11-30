@@ -24,3 +24,4 @@ const kTextFieldFilledColor = Color(0xFFCFEADF);
 const kHomeUserProfileCard = Color(0xFFFFF8E6);
 const kAltHomeUserProfileCard = Color(0xFFFFF2CC);
 const kProfileCardBlue = Color(0xFFD8E7FC);
+const kLightBlue = Color(0xFFECF2FF);

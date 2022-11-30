@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gdsc_app/utils/constants.dart';
 
 class ProfileScreen extends StatefulWidget {
   static const profileScreenId = "/profile_screen";
@@ -11,6 +12,32 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    Size size = MediaQuery.of(context).size;
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Container(
+            height: size.height * 0.4,
+            width: size.width,
+            color: kLightBlue,
+            child: Center(
+              child: Column(
+                children: [
+                  Container(
+                    height: 160.0,
+                    width: 160.0,
+                    decoration: BoxDecoration(
+                      color: kProfileCardBlue,
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
+                  Text("Person", style: kH2TextStyle),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
