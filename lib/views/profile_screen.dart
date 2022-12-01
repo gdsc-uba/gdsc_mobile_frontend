@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gdsc_app/utils/constants.dart';
 import 'package:gdsc_app/widgets/auth_formfields.dart';
 
+import '../widgets/auth_buttons.dart';
+
 class ProfileScreen extends StatefulWidget {
   static const profileScreenId = "/profile_screen";
   const ProfileScreen({super.key});
@@ -84,6 +86,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       hintText: "Twitter",
                       blueFields: true,
                       showLable: false,
+                    ),
+                    const SizedBox(height: 25.0),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: EditProfileBtn(
+                            size: size,
+                            buttonTitle: "Save",
+                            onPressed: () {},
+                          ),
+                        ),
+                        const SizedBox(width: 20.0),
+                        Flexible(
+                          child: EditProfileBtn(
+                            size: size,
+                            buttonTitle: "Cancel",
+                            onPressed: () {},
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
